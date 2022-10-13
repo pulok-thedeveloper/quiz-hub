@@ -29,7 +29,7 @@ function App() {
         },
         
         {
-          path: '/:id',
+          path: '/topics/:id',
           loader: async({params})=>{
             return fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
           },
@@ -44,14 +44,12 @@ function App() {
           path: '/blog',
           element: <Blog></Blog>
         },
-        {
-          path: '*',
-          element: <h1>404 Not Found</h1>
-        }
+        {path:'*', element: <p className='text-5xl my-10 font-bold'>This is 404</p>}
       ],
       element: <Main></Main>
       
     }
+    
   ])
   return (
     <div className="App">

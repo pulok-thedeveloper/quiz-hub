@@ -4,8 +4,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { EyeIcon } from '@heroicons/react/24/solid'
 
-const Question = ({qs}) => {
-    const {id, options, correctAnswer, question} = qs;
+const Question = ({ques}) => {
+    const {id, options, correctAnswer, question} = ques;
 
     const answerStatus = (selectedAns) => {
         if(selectedAns.option === correctAnswer){
