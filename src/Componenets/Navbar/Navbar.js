@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link} from 'react-router-dom';
+import { Link, NavLink} from 'react-router-dom';
 import logo from '../../ideas.png';
 import './Navbar.css';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
@@ -23,10 +23,10 @@ const Navbar = () => {
             </div>
             
             <nav className={`flex w-full md:w-auto z-10 flex-col md:flex-row duration-500 absolute left-0 md:static ${open ? 'top-20 bg-slate-700 text-white py-5' :'top-[-180px]' }`}>
-                <Link to="/home">Home</Link>
-                <Link to="/topics">Topics</Link>
-                <Link to="/stats">Statistics</Link>
-                <Link to="/blog">Blog</Link>
+                <NavLink className={({ isActive }) => isActive ? 'active': undefined} to="/home">Home</NavLink>
+                <NavLink to="/topics">Topics</NavLink>
+                <NavLink to="/stats">Statistics</NavLink>
+                <NavLink to="/blog">Blog</NavLink>
             </nav>
         </div>
     );
